@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
+
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'hooks/scroll_controller_for_animation.dart';
 
@@ -31,7 +31,14 @@ class HomePage extends HookWidget {
         controller: scrollController,
         children: <Widget>[
           for (int i = 0; i < 5; i++)
-            Card(child: FittedBox(child: FlutterLogo())),
+            Card(
+              child: FittedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: FlutterLogo(style: FlutterLogoStyle.horizontal),
+                ),
+              ),
+            ),
         ],
       ),
     );
